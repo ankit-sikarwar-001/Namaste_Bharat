@@ -1,0 +1,14 @@
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+.typing-text {
+  border-right: 0.15em solid black;
+  animation: blink-caret 0.75s step-end infinite;
+}
