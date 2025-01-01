@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "../Explore/explore.css";
+import Scroll from "./InfiniteSlider";
 
 export default function Explore() {
   const scrollRef = useRef(null);
@@ -35,6 +36,7 @@ export default function Explore() {
 
     return () => clearInterval(typingEffect);
   }, []);
+
   return (
     <div>
       <div className="w-full h-[calc(90vh)] overflow-hidden ">
@@ -255,44 +257,100 @@ export default function Explore() {
       </div>
 
       {/* legacy ends  */}
-      <div className="text-4xl ">
-        <p className="text-center text-white font-extrabold  relative top-12 underline">
+      <div className="text-4xl h-screen ">
+        <p className="ml-10 text-slate-600 font-extrabold  relative bottom-5 underline">
           India's Diverse Beautiful Sarees{" "}
         </p>
-        <div className=" w-full h-screen grid grid-cols-8 justify-center ">
-          <div className="bg-red-800 w-full h-full relative">
+        <div className=" w-full h-[80%] grid grid-cols-8 justify-center ">
+          <div className="bg-red-800 w-full h-full relative group ">
             <img
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center cursor-pointer"
               src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTWZ2Yg5bTeIAIap7n9rueLTazh5jM_hxXMmkLm1YFOYAhM8ANmJUNz00L5dEv7r81Egey-GA_ofLUYfG0TNTQdXCDWjhZuT4iovCw8oR6ghAsDuB1fGcpk&usqp=CAE"
               alt="banarasi sarees"
             />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Banarasi Sarees (Uttar Pradesh)
+            </p>
           </div>
-          <div className="bg-yellow-300  w-full">
+          <div className="bg-yellow-300  w-full group cursor-pointer">
             <img
-              className="w-full h-full object-cover object-center"
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSZq30JVCQwrwgS_-6Az7wq_CIbLw5mIVDXYE1aH-_qG2hw3FPh4QcDl-gnI5N0UlAsadBz90uhm2_Zc7RpRvSqxaopqV5MxtsAtPcHKRg&usqp=CAE"
+              className="w-full h-full object-cover object-[calc(55%)]"
+              src="https://www.atulyakarigari.com/wp-content/uploads/2023/09/ATKHOLI-430-570x809-1.jpg"
               alt="chikankari sarees"
             />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Chikankari Sarees (Uttar Pradesh)
+            </p>
           </div>
-          <div className="bg-blue-300 w-full">
+          <div className="bg-blue-300 w-full group cursor-pointer">
             <img
-              className=" w-full h-full object-cover "
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSqCi7fak0MK2Bv7zDBlqH8VveybKGaA6l_jM_IiaeG37wA6jo1oOJyLblSmQ_NvfXieVLXp1c7EFPcyivDBRFT7FkDOpKLsxGXh9nMOkwZEETy4AuX1DGZ&usqp=CAE"
+              className=" w-full h-full object-cover object-[calc(40%)]"
+              src="https://saundaryamfashions.com/cdn/shop/files/43308-1.jpg?v=1696672715"
               alt="bhagalpuri sarees"
             />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Bhagalpuri Sarees (Bihar)
+            </p>
           </div>
-          <div className="bg-green-300 w-full">
+          <div className="bg-green-300 w-full group cursor-pointer">
             <img
-              className="w-full h-full object-cover object-center"
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSZq30JVCQwrwgS_-6Az7wq_CIbLw5mIVDXYE1aH-_qG2hw3FPh4QcDl-gnI5N0UlAsadBz90uhm2_Zc7RpRvSqxaopqV5MxtsAtPcHKRg&usqp=CAE"
-              alt="chikankari sarees"
+              className="w-full h-full object-cover object-[calc(52%)]"
+              src="https://rukminim2.flixcart.com/image/850/1000/xif0q/sari/f/w/n/free-cb-1-dark-pink-firozi-blazik-unstitched-original-imaghqhztysbggnx.jpeg?q=90&crop=false"
+              alt="Kanjeevaram Saree"
             />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Kanjeevaram Sarees (Tamil Nadu)
+            </p>
           </div>
-          <div className="bg-slate-300 w-full"></div>
-          <div className="bg-pink-300 w-full"></div>
-          <div className="bg-purple-300 w-full"></div>
-          <div className="bg-neutral-300 w-full"></div>
+
+          <div className="bg-slate-300 w-full group cursor-pointer">
+            <img
+              className="w-full h-full object-cover object-[calc(40%)]"
+              src="https://clothsvilla.com/cdn/shop/products/B-Vipul-Shanvi-Pashamina-Rama_1_800x.jpg?v=1698125164"
+              alt="Pashmina sarees"
+            />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Pashmina Sarees (Jammu & Kashmir)
+            </p>
+          </div>
+          <div className="bg-pink-300 w-full group cursor-pointer">
+            <img
+              className="w-full h-full object-cover object-[calc(20%)]"
+              src="https://images.indianweddingsaree.com/AlternateView/1943575/A638502412232391811.jpg"
+              alt="Mysore Silk Saree"
+            />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Mysore Silk Sarees (Karnataka)
+            </p>
+          </div>
+          <div className="bg-purple-300 w-full group cursor-pointer">
+            <img
+              className="w-full h-full object-cover object-[calc(40%)]"
+              src="https://www.soch.com/media/catalog/product/s/o/soch_srevksv23944a.jpg?width=440&height=660"
+              alt="Kasavu Saree (Kerala)"
+            />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Kasavu Sarees (Kerala)
+            </p>
+          </div>
+          <div className="bg-neutral-300 w-full group cursor-pointer">
+            <img
+              id="parentelement"
+              className="w-full h-full object-cover object-center"
+              src="https://shop.barikothi.com/cdn/shop/products/8100000232912Q3-2_0418b9d7-32dd-4a77-bc94-1d44a3738406.jpg?v=1705656368"
+              alt="Baluchari Saree (West Bengal)"
+            />
+            <p className="text-xl text-center text-white font-bold opacity-0 transition-opacity duration-300 relative bottom-20 group-hover:opacity-100 hover:text-blue-700 hover:underline">
+              Baluchari Sarees (West Bengal)
+            </p>
+          </div>
         </div>
+      </div>
+
+      {/* indian cousine  */}
+      <div>
+        <p className="text-3xl ">Indian Cousine's </p>
+        <Scroll />
       </div>
     </div>
   );
